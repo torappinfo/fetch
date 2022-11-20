@@ -1,5 +1,4 @@
 var http = require('http');
-const fetch = require('node-fetch');
 http.createServer(function (req, res) {
   var url = req.url.substring(1);
   console.log(`request at ${url}!`)
