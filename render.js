@@ -1,10 +1,17 @@
-import { serve } from "https://deno.land/std@0.177.0/http/server.ts";
-serve((req) => {
+const express = require("express");
+const fetch = require('node-fetch');
+const app = express();
+const port = process.env.PORT || 8080;
+
+app.get("/", (req, res) => {
   let url = req.url;
   let iSlash = url.indexOf('/',11);
   let nUrl = url.substring(iSlash+1);
-  return await goUrl(req, nUrl);
+  let html = await goUrl(req, nUrl);
+  res.send(html);
 });
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 async function goUrl(request, url) {
   let fp = {

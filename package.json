@@ -1,13 +1,17 @@
 {
   "name": "fetch",
   "version": "1.0.0",
-  "description": "Cyclic.sh micro api starter",
-  "main": "index.js",
+  "description": "Cyclic.sh/render micro api starter",
+  "main": "render.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node render.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
