@@ -4,10 +4,11 @@ const server = http.createServer((req, res) => {
   let url = req.url;
   let iSlash = url.indexOf('/',11);
   let nUrl = url.substring(iSlash+1);
-  let response = await goUrl(req, nUrl);
-  res.writeHead(response.status, {'Content-Type': response.headers.get('content-type')});
-  res.write(response.text());
-  res.end();
+  goUrl(req, nUrl).then(response => {
+    res.writeHead(response.status, {'Content-Type': response.headers.get('content-type')});
+    res.write(response.text());
+    res.end();
+  });
 });
 
 const port = process.env.PORT || 8080;
