@@ -16,17 +16,10 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 async function goUrl(request, url) {
   let fp = {
     method: request.method,
-    headers: {}
-  }
-  let reqHeaders = new Headers(request.headers);
-  let dropHeaders = ["cookie","user-agent","accept","accept-language"];
-  let he = reqHeaders.entries();
-  for (let h of he) {
-    let key = h[0],
-        value = h[1];
-    if (dropHeaders.includes(key)) {
-      fp.headers[key] = value;
-    }
+  };
+  fp.headers = new Headers(request.headers);
+  for(var i = 2; i < arguments.length-1; i=i+2){
+    fp.headers[arguments[i]] = arguments[i+1];
   }
   return await fetch(url, fp);
 }
