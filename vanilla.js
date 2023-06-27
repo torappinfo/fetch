@@ -1,8 +1,7 @@
 const http = require('http');
-const fetch = require('node-fetch');
 const server = http.createServer((req, res) => {
   let url = req.url;
-  let iSlash = url.indexOf('/',11);
+  let iSlash = url.indexOf('?',11);
   let nUrl = url.substring(iSlash+1);
   goUrl(req, nUrl).then(response => {
     res.writeHead(response.status, {'Content-Type': response.headers.get('content-type')});
