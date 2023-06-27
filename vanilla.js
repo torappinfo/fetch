@@ -16,11 +16,7 @@ server.listen(port);
 async function goUrl(request, url) {
   let fp = {
     method: request.method,
-    headers: {}
+    headers: request.headers
   };
-  fp.headers = new Headers(request.headers);
-  for(var i = 2; i < arguments.length-1; i=i+2){
-    fp.headers[arguments[i]] = arguments[i+1];
-  }
   return await fetch(url, fp);
 }
