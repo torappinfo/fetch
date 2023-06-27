@@ -1,10 +1,17 @@
-import { serve } from "https://deno.land/std@0.177.0/http/server.ts";
-serve((req) => {
+const http = require('http');
+const fetch = require('node-fetch');
+const server = http.createServer((req, res) => {
   let url = req.url;
   let iSlash = url.indexOf('/',11);
   let nUrl = url.substring(iSlash+1);
-  return await goUrl(req, nUrl);
+  let response = await goUrl(req, nUrl);
+  res.writeHead(response.status, {'Content-Type': response.headers.get('content-type')});
+  res.write(response.text());
+  res.end();
 });
+
+const port = process.env.PORT || 8080;
+server.listen(port);
 
 async function goUrl(request, url) {
   let fp = {
