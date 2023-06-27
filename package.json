@@ -4,9 +4,8 @@
   "description": "Cyclic.sh/render micro api starter",
   "main": "vanilla.js",
   "scripts": {
+    "start": "node vanilla.js"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-  }
+  "license": "ISC"
 }
