@@ -1,4 +1,5 @@
 const http = require('http');
+const fetch = require('node-fetch');
 const server = http.createServer((req, res) => {
   let url = req.url;
   let iSlash = url.indexOf('?',11);
