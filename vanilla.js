@@ -1,4 +1,4 @@
-const http = require('http');
+import http from 'http';
 import fetch from 'node-fetch';
 const server = http.createServer((req, res) => {
   let url = req.url;
