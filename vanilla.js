@@ -2,7 +2,7 @@ import http from 'http';
 import fetch from 'node-fetch';
 const server = http.createServer((req, res) => {
   let url = req.url;
-  let iSlash = url.indexOf('?',11);
+  let iSlash = url.indexOf('?');
   let nUrl = url.substring(iSlash+1);
   console.log(nUrl);
   goUrl(req, nUrl).then(response => {
