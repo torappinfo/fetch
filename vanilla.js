@@ -4,6 +4,7 @@ const server = http.createServer((req, res) => {
   let url = req.url;
   let iSlash = url.indexOf('?',11);
   let nUrl = url.substring(iSlash+1);
+  console.log(nUrl);
   goUrl(req, nUrl).then(response => {
     res.writeHead(response.status, {'Content-Type': response.headers.get('content-type')});
     res.write(response.text());
