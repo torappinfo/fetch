@@ -23,3 +23,4 @@ async function goUrl(request, url) {
   }
   return await fetch(url, fp);
 }
+module.exports = app;

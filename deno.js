@@ -1,10 +1,9 @@
-import { serve } from "https://deno.land/std@0.177.0/http/server.ts";
-serve((req) => {
+async function handler(req){
   let url = req.url;
   let iSlash = url.indexOf('/',11);
   let nUrl = url.substring(iSlash+1);
   return await goUrl(req, nUrl);
-});
+};
 
 async function goUrl(request, url) {
   let fp = {
@@ -16,3 +15,4 @@ async function goUrl(request, url) {
   }
   return await fetch(url, fp);
 }
+Deno.serve(handler);
