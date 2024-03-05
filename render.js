@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const app = express();
 const port = process.env.PORT || 8080;
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
   let url = req.url;
   let iSlash = url.indexOf('/',11);
   let nUrl = url.substring(iSlash+1);
@@ -23,4 +23,3 @@ async function goUrl(request, url) {
   }
   return await fetch(url, fp);
 }
-module.exports = app;
