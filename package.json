@@ -4,9 +4,6 @@
   "description": "Cyclic.sh/render",
   "main": "render.js",
   "type": "module",
-  "scripts": {
-    "start": "node render.js"
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
