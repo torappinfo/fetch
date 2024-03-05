@@ -2,10 +2,10 @@
   "name": "fetch",
   "version": "1.0.0",
   "description": "Cyclic.sh/render",
-  "main": "vanilla.js",
+  "main": "render.js",
   "type": "module",
   "scripts": {
-    "start": "node vanilla.js"
+    "start": "node render.js"
   },
   "author": "",
   "license": "ISC",
