@@ -1,7 +1,7 @@
 const express = require("express");
 const fetch = require('node-fetch');
 const app = express();
-const port = process.env.PORT || 80;
+const port = 80;
 
 app.get("/", async (req, res) => {
   let url = req.url;
