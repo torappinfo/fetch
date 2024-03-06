@@ -2,7 +2,7 @@
   "name": "fetch",
   "version": "1.0.0",
   "description": "Cyclic.sh/render",
-  "main": "render.js",
+  "main": "vanilla.js",
   "type": "module",
   "author": "",
   "license": "ISC",
