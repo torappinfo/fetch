@@ -2,7 +2,7 @@
   "name": "fetch",
   "version": "1.0.0",
   "description": "Cyclic.sh/render",
-  "main": "express.cjs",
+  "main": "express.js",
   "type": "module",
   "scripts": {
     "build": "node scripts/build.cjs"
