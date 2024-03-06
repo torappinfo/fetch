@@ -5,7 +5,7 @@
   "main": "vanilla.js",
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.cjs"
   },
   "author": "",
   "license": "ISC",
