@@ -44,7 +44,8 @@ try {
             process.exit(1)
         }
         console.info('Successfully built app.js into .zeabur/output/functions/index.func')
-        fs.copyFileSync(render.js, '.zeabur/output/functions/index.func/index.js')
+        fs.copyFileSync(.zeabur/output/functions/index.func/render.js, '.zeabur/output/functions/index.func/index.js');
+        fs.rmSync('.zeabur/output/functions/index.func/render.js')
     })
 } catch (error) {
     console.error(error)
