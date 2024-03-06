@@ -1,5 +1,5 @@
-const express = require("express");
-const fetch = require('node-fetch');
+import express from 'express';
+import fetch from 'node-fetch';
 const app = express();
 const port = process.env.PORT || 8080;
 
@@ -23,3 +23,4 @@ async function goUrl(request, url) {
   }
   return await fetch(url, fp);
 }
+module.exports = app;
