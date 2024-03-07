@@ -5,7 +5,6 @@ const server = http.createServer((req, res) => {
   let url = req.url;
   let iSlash = url.indexOf('?');
   let nUrl = url.substring(iSlash+1);
-  console.log(nUrl);
   goUrl(req, nUrl).then(response => {
     res.writeHead(response.status, {'Content-Type': response.headers.get('content-type')});
     res.write(response.blob());
@@ -13,8 +12,8 @@ const server = http.createServer((req, res) => {
   });
 });
 
-const port = process.env.PORT || 80;
-server.listen(port);
+//const port = process.env.PORT || 80;
+//server.listen(port);
 
 async function goUrl(request, url) {
   let fp = {
@@ -23,3 +22,4 @@ async function goUrl(request, url) {
   };
   return await fetch(url, fp);
 }
+module.exports = server;
