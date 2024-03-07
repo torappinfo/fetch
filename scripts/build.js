@@ -50,6 +50,6 @@ try {
 } catch (error) {
     console.error(error)
 }
-
-fs.copyFileSync('package.json', '.zeabur/output/functions/index.func/package.json')
+fs.cpSync('node_modules', '.zeabur/output/functions/index.func/node_modules', {recursive: true, verbatimSymlinks: true})
+fs.cpSync('package.json', '.zeabur/output/functions/index.func/package.json')
 
