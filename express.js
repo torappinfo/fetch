@@ -6,7 +6,7 @@ const app = express();
 
 app.get("/", async (req, res) => {
   let url = req.url;
-  let iSlash = url.indexOf('?',11);
+  let iSlash = url.indexOf('?');
   let nUrl = url.substring(iSlash+1);
   console.log(nUrl);
   let response = await goUrl(req, nUrl);
