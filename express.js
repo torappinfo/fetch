@@ -8,6 +8,7 @@ app.get("/", async (req, res) => {
   let url = req.url;
   let iSlash = url.indexOf('?',11);
   let nUrl = url.substring(iSlash+1);
+  console.log(nUrl);
   let response = await goUrl(req, nUrl);
   res.status(response.status);
   res.set('Content-Type', response.headers.get('Content-Type'));
