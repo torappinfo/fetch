@@ -51,5 +51,5 @@ try {
     console.error(error)
 }
 
-fs.cpSync('package.json', '.zeabur/output/functions/index.func/package.json')
+fs.copyFileSync('package.json', '.zeabur/output/functions/index.func/package.json')
 
