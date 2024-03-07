@@ -5,9 +5,8 @@ const port = process.env.PORT || 80;
 
 app.get("/", async (req, res) => {
   let url = req.url;
-  let iSlash = url.indexOf('/',11);
+  let iSlash = url.indexOf('?',11);
   let nUrl = url.substring(iSlash+1);
-  console.log(nUrl);
   let response = await goUrl(req, nUrl);
   res.set('Content-Type', response.headers.get('Content-Type'));
   res.send(await response.blob());
