@@ -1,5 +1,5 @@
-import http from 'http';
-import fetch from 'node-fetch';
+const http = require( 'http');
+const fetch = require('node-fetch');
 const server = http.createServer((req, res) => {
   let url = req.url;
   let iSlash = url.indexOf('?');
@@ -7,12 +7,12 @@ const server = http.createServer((req, res) => {
   console.log(nUrl);
   goUrl(req, nUrl).then(response => {
     res.writeHead(response.status, {'Content-Type': response.headers.get('content-type')});
-    res.write(response.text());
+    res.write(response.blob());
     res.end();
   });
 });
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 80;
 server.listen(port);
 
 async function goUrl(request, url) {
