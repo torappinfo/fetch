@@ -1,7 +1,8 @@
 const express = require("express");
-const fetch = require('node-fetch');
+//node-fetch is ESM-only module
+const fetch = (...args)=>import('node-fetch').then(({default: fetch})=>fetch(...args));
 const app = express();
-const port = process.env.PORT || 80;
+//const port = process.env.PORT || 80;
 
 app.get("/", async (req, res) => {
   let url = req.url;
@@ -13,7 +14,7 @@ app.get("/", async (req, res) => {
   res.send(await response.blob());
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+//app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 async function goUrl(request, url) {
   let fp = {

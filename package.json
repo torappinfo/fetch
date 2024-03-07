@@ -2,7 +2,7 @@
   "name": "fetch",
   "version": "1.0.0",
   "description": "Cyclic.sh/render",
-  "main": "vanilla.js",
+  "main": "express.js",
   "scripts": {
     "build": "node scripts/build.js"
   },
