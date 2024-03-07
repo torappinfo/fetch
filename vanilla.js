@@ -1,5 +1,6 @@
 const http = require( 'http');
-const fetch = require('node-fetch');
+//node-fetch is ESM-only module
+const fetch = (...args)=>import('node-fetch').then(({default: fetch})=>fetch(...args));
 const server = http.createServer((req, res) => {
   let url = req.url;
   let iSlash = url.indexOf('?');
