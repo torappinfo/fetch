@@ -7,8 +7,9 @@ app.get("/", async (req, res) => {
   let url = req.url;
   let iSlash = url.indexOf('/',11);
   let nUrl = url.substring(iSlash+1);
-  let html = await goUrl(req, nUrl);
-  res.send(html);
+  let response = await goUrl(req, nUrl);
+  res.set('Content-Type', response.headers.get('Content-Type'));
+  res.send(await response.blob());
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
