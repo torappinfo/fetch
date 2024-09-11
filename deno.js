@@ -6,13 +6,12 @@ async function handler(req){
 };
 
 async function goUrl(request, url) {
-  let fp = {
+  const Url = new URL(url);
+  const newReq = new Request(Url, {
     method: request.method,
-  };
-  fp.headers = new Headers(request.headers);
-  for(var i = 2; i < arguments.length-1; i=i+2){
-    fp.headers[arguments[i]] = arguments[i+1];
-  }
-  return await fetch(url, fp);
+    headers: request.headers,
+    body: request.body
+  })
+  return await fetch(newReq);
 }
 Deno.serve(handler);
