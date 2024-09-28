@@ -18,13 +18,13 @@ app.get("/", async (req, res) => {
 //app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 async function goUrl(request, url) {
-  let fp = {
+  const Url = new URL(url);
+  const newReq = new Request(Url, {
     method: request.method,
-  };
-  fp.headers = new Headers(request.headers);
-  for(var i = 2; i < arguments.length-1; i=i+2){
-    fp.headers[arguments[i]] = arguments[i+1];
-  }
-  return await fetch(url, fp);
+    headers: request.headers,
+    body: request.body,
+    redirect: 'follow'
+  })
+  return await fetch(newReq);
 }
 module.exports = app;

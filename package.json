@@ -2,21 +2,14 @@
   "name": "fetch",
   "version": "1.0.0",
   "description": "Cyclic.sh/render",
-  "main": "express.js",
-  "scripts": {
-    "build": "node scripts/build.js"
-  },
+  "main": "vanilla.js",
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "",
-    "node-fetch": "^3.1.0"
-  },
-  "devDependencies": {
-    "fs": "",
-    "esbuild": "^0.14.7"
+    "http": "",
+    "node-fetch": ""
   },
   "engines": {
-    "node": ">=18"
+    "node": ""
   }
 }

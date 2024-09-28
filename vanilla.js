@@ -16,10 +16,13 @@ const server = http.createServer((req, res) => {
 //server.listen(port);
 
 async function goUrl(request, url) {
-  let fp = {
+  const Url = new URL(url);
+  const newReq = new Request(Url, {
     method: request.method,
-    headers: request.headers
-  };
-  return await fetch(url, fp);
+    headers: request.headers,
+    body: request.body,
+    redirect: 'follow'
+  })
+  return await fetch(newReq);
 }
 module.exports = server;
